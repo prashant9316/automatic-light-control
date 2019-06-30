@@ -1,0 +1,38 @@
+// this is sample program for the ultrasound module to test.
+
+//connections:
+//connect the trig pin to digital pin 9 of arduino .
+//connect the echo pin to digital pin 10 of arduino.
+
+const int trigPin = 9;
+const int echoPin = 10;
+
+//define variables
+long duration;
+float distance;
+
+void setup()
+{
+  pinMode(trigPin,OUTPUT);  // set the trigPin as output 
+  pinMode(echoPin,INPUT);  // set the echoPin as input
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigPin,LOW);
+  delayMicroseconds(2);
+  // Set the trigPin HIGH state for 10 microseconds
+  digitalWrite(trigPin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin,LOW);
+  // Now read the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(echoPin,HIGH);
+  //Calculating the distance
+  distance = duration*0.034/2;
+  //Prints the distance on the Serial Monitor
+  Serial.print("Distance: ");
+  Serial.println(distance);
+  delay(4000);
+  
+}
