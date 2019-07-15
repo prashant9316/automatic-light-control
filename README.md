@@ -11,7 +11,7 @@ this project is an Arduino nano based smart home appliance control. This project
 5. breadboard and connecting wires
 
 ## Circuit schematic
-this is the link to circuit schematic 
+this is the link to circuit 
 [schematic](https://drive.google.com/file/d/1kMSx11q7l_5U-MCHBY0NgY5SOxAjIM8g/view?usp=drive_open)
 
 1. connect data pin of the relay module to digital pin 8.
